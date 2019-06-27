@@ -19,6 +19,7 @@ Route::get('/','PagesController@index');
 Route::get('/stories', 'PagesController@stories');
 
 Route::resource('stories', 'StoryController');
+Route::resource('authors', 'UserController');
 
 
 Auth::routes();
@@ -30,3 +31,8 @@ Route::get('locale/{locale}', function($locale){
     return redirect()->back();
     //Will add session of language when users click to change language
 });
+
+Route::get('/admin', 'AdminController@admin')->middleware('is_admin')->name('admin');
+
+//Route::resource('/comments','CommentController')->except('create','index');
+Route::post('/comment/store', 'CommentController@store')->name('comment.add');

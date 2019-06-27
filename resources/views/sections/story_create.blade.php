@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Add a new story</h1>
+    <h1>@lang('info.add_new_story')</h1>
     {{ Form::open(['action' => 'StoryController@store', 'method' => 'POST']) }}
     <div class="from-group">
         {{Form::label('title','Title')}}

@@ -18,6 +18,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/stories">@lang('info.stories_nav')</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/authors">@lang('info.authors')</a>
+                        </li>
                         <!--<li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Language</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -33,9 +36,9 @@
                     <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@lang('info.language_nav')</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="locale/en">English</a>
-                                <a class="dropdown-item" href="locale/lv">Latvian</a>
-                                <a class="dropdown-item" href="locale/ru">Russian</a>
+                                <a class="dropdown-item" href="locale/en">@lang('info.english')</a>
+                                <a class="dropdown-item" href="locale/lv">@lang('info.latvian')</a>
+                                <a class="dropdown-item" href="locale/ru">@lang('info.russian')</a>
                             </div>
                         </li>
                         <!-- Authentication Links -->
@@ -55,7 +58,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/home">My stories</a>
+                                    <a class="dropdown-item" href="/home">@lang('info.my_stories')</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

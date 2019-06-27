@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>All stories:</h1>
+    <h1>@lang('info.all_stories')</h1>
     @if(count($stories) > 0)
         @foreach($stories as $story)
             <div class="well">
-                <h5>Author:{{$story->user->name}}</h5>
+                <h6>Author: {{$story->user->name}}</h6>
                 <h3><a href="/stories/{{$story->id}}">{{$story->title}}</a></h3>
             </div>
         @endforeach

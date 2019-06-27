@@ -40,4 +40,11 @@ class User extends Authenticatable
     public function stories(){
         return $this->hasMany('App\Story');
     }
+
+    const A_TYPE = 'admin'; //admin type
+    const DEF_TYPE = 'default'; //default type
+
+    public function isAdmin(){        
+        return $this->type === self::A_TYPE;    
+    }
 }

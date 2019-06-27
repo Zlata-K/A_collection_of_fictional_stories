@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Edit a story</h1>
+    <h1>@lang('info.edit_a_story')</h1>
     {{ Form::open(['action' => ['StoryController@update', $story->id], 'method' => 'POST']) }}
     <div class="from-group">
         {{Form::label('title','Title')}}
