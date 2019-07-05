@@ -15,7 +15,7 @@ class StoryController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
+        $this->middleware('auth', ['except' => ['index', 'show']]); //index and show aren't using this middleware
     }
 
     /**
@@ -27,7 +27,7 @@ class StoryController extends Controller
     {
         //$stories = DB::select('SELECT * FROM stories');
         //$stories =  Story::all()->paginate(1);
-        $stories =  Story::orderBy('created_at','asc')->paginate(5);
+        $stories =  Story::orderBy('created_at','asc')->paginate(5); //to show only five stories on one page
         return view('sections.stories')->with('stories',$stories);
     }
 
@@ -131,17 +131,18 @@ class StoryController extends Controller
     {
         $story = Story::find($id);
 
-        //Check for correct user
+        //Check for correct user or admin
 
         if(auth()->user()->type == 'admin' || auth()->user()->id === $story->user_id)
         {
             $story->delete();
         return redirect('/stories')->with('success','Story Removed');
         }
+        return redirect('/stories')->with('error', 'Only author can edit it');
 
 
        // if(auth()->user()->type != 'admin'){
-            return redirect('/stories')->with('error', 'Only author can edit it');
+           // return redirect('/stories')->with('error', 'Only author can edit it');
        /* }
         elseif(auth()->user()->id !== $story->user_id){
             return redirect('/stories')->with('error', 'Only author can edit it');

@@ -18,7 +18,7 @@
             {!!Form::close()!!}
         @endif
     @endif
-
+<!--Comments-->
 <h4>@lang('info.comments')</h4>
     @foreach($story->comments as $comment)
         <div class="display-comment">
